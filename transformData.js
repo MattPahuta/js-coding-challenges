@@ -38,7 +38,7 @@ Read about toDateString() for info on formatting a readable date.
 */
 function transformData(data) {
   // map over data
-  return data.map(({ name, dob }) => {
+  return data.map(({name, dob}) => {
     // return a new object in desired format
     return {
       fullName: `${name.first} ${name.last}`,
