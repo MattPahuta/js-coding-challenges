@@ -23,10 +23,10 @@ Expected output:
 function getFreePodcasts(data) {
 
   return data
-  // filter data for free pods only, use destructuring w/filter
-    .filter(({paid}) => !paid)
+    // filter data for free pods only, use destructuring w/filter
+    .filter(({ paid }) => !paid)
     // build updated array of free pods with desired properties, use destructuring
-    .map(({title, rating, paid}) => {
+    .map(({ title, rating, paid }) => {
       return {
         title, rating, paid
       }
