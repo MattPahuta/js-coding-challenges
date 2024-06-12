@@ -50,10 +50,12 @@ const items = [
 */
 
 function getSaleItems(data) {
-  return data.filter(({type}) => (
+  // filter to get products where type === 'sweet'
+  return data.filter(({ type }) => (
     type === 'sweet'
-  )).map(({item, price}) => (
-    {item, price}
+  // return a new array of filtered items with item and price props only
+  )).map(({ item, price }) => (
+    { item, price }
   ))
 };
 
