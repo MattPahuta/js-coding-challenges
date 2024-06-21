@@ -17,9 +17,8 @@ import products from "./dataAssets/holidayProducts.js";
 */
 
 function sortProducts(data) {
-  return data.sort((a,b) => a.price - b.price)
+  return data.sort((a, b) => a.price - b.price)
 }
 
 const listByCheapest = sortProducts(products);
 console.log(listByCheapest);
-
