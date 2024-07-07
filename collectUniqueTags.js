@@ -29,7 +29,7 @@ function getUniqueTags(data) {
       // if tag is not in the ref obj, it is unique, add to ref obj w/val of true
       uniqueTags[tag] = true;
       return true;
-    } 
+    }
     return false;
   })
 
@@ -38,7 +38,7 @@ function getUniqueTags(data) {
   // return [...new Set(alltags)];
 
   // with map, flat, and filter
-  return data.map(({tags}) => tags)
+  return data.map(({ tags }) => tags)
     .flat()
     .filter((el, index, arr) => {
       return arr.indexOf(el) === index;
@@ -46,4 +46,3 @@ function getUniqueTags(data) {
 }
 
 console.log(getUniqueTags(mediaData));
-

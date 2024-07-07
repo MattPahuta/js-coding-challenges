@@ -22,3 +22,6 @@ function sortProducts(data) {
 
 const listByCheapest = sortProducts(products);
 console.log(listByCheapest);
+
+// To better visualize sorted results:
+listByCheapest.forEach(item => console.log(item.product, item.price));
