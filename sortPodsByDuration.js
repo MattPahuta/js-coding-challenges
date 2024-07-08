@@ -26,24 +26,24 @@ each podcast to the console, like this:
 
 function sortByDuration(data, flightLength) {
   // accept array of objects and a flight length (num)
-  const pods = data.map(({title, duration}) => (
-    {title, duration}
+  // create a streamlined copy of array to sort
+  const pods = data.map(({ title, duration }) => (
+    { title, duration }
   ))
   let sortedPods; // initialize variable for sorted array
   // if flightLength <= 60
   //   - sort pods shortest to longest
   if (flightLength <= 60) {
-    sortedPods = pods.sort((a,b) => a.duration - b.duration);
+    sortedPods = pods.sort((a, b) => a.duration - b.duration);
     // otherwise
     //   - sort pods longest to shortest
   } else {
     sortedPods = pods.sort((a, b) => b.duration - a.duration);
   }
   // log numbered list of of pod title w/duration
-  sortedPods.forEach(({title, duration}, index) => {
+  sortedPods.forEach(({ title, duration }, index) => {
     console.log(`${index + 1}. ${title}, ${duration} minutes`)
   })
 }
 
 sortByDuration(podcasts, 45);
-
