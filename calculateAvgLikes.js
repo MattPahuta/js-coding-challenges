@@ -40,11 +40,11 @@ by the total number of posts.
 */
 
 function calcAverageLikes(data) {
-  return data.reduce((acc, curr) => (
+  const totalLikes = data.reduce((acc, curr) => (
     acc + curr.likes
-  ), 0) / data.length;
+  ), 0)
+  return totalLikes / data.length;
 }
 
 
 console.log(calcAverageLikes(postData))
-
