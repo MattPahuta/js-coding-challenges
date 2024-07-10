@@ -14,7 +14,11 @@ Example output: "abc12"
 const password = "9338dsabbbadjdjdj2sdfdfdf282ff8fdsd888ss8cfgfg332q23";
 
 function removeDupeChars(chars) {
-  // str with dups removed:
+
+  // with Set, split, join
+  // return Array.from(new Set(password.split(''))).join('');
+
+  // *** with a for...of loop, includes method
   let noDupChars = '';
   // loop through chars, add to new string, check for existence of char
   for (let char of chars) {
@@ -25,5 +29,4 @@ function removeDupeChars(chars) {
   return noDupChars;
 }
 
-console.log(removeDupeChars("aabbccb1212"));
 console.log(removeDupeChars(password));
