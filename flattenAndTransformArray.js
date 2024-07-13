@@ -22,21 +22,16 @@ Example output: ["🏆 Alex Booker", "⭐ Bob Smith", "💎 Camilla Lambert" ...
 const awards = ["🏆", "⭐", "💎", "🥇", "👑"];
 
 function getHosts(podData) {
-  // const allHosts = podData.reduce((acc, curr) => [...acc, ...curr.hosts], []);
+
+  // with reduce and concat
   // const allHosts = podData.reduce((acc, curr) => acc.concat(curr.hosts), []);
-  // return allHosts;
 
-  return podData.reduce((acc, curr) => [...acc, ...curr.hosts], [])
-
-  return podData.reduce((acc, curr) => {
-    // add curr.hosts to the acc array
-    return [...acc, ...curr.hosts];
-  }, [])
+  // with reduce and spread
+  return podData.reduce((acc, curr) => [...acc, ...curr.hosts], []);
 }
 
 function assignAwards(data) {
-  const hosts = getHosts(data);
-  return hosts.map(host => {
+  return data.map(host => {
     const randomAward = awards[Math.floor(Math.random() * awards.length)]
     return `${randomAward} ${host}`
   });
@@ -44,4 +39,4 @@ function assignAwards(data) {
 
 
 console.log(getHosts(podcasts));
-console.log(assignAwards(podcasts));
+console.log(assignAwards(getHosts(podcasts)));
