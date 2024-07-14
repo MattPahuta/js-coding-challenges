@@ -42,7 +42,7 @@ function createDescriptionsFor(data) {
   // *** returning descriptions with only the first host ***
   return data.map((pod) => {
     // destructure pod props needed for description
-    const {title, duration, genre, hosts} = pod
+    const { title, duration, genre, hosts } = pod
     // return updated objects w/description prop
     return {
       ...pod,
