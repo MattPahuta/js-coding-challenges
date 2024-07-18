@@ -24,7 +24,7 @@ function countChars(str) {
     // if character is not in the object, add it, give it value of 1
     if (!countObj[name[i]]) {
       countObj[name[i]] = 1;
-    // character is already in object, increment the char's value
+      // character is already in object, increment the char's value
     } else {
       countObj[name[i]] += 1;
     }
