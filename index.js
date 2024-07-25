@@ -1,31 +1,71 @@
 /*
-   Oh no, our emoji flower bed is infested with mammals, trees and leaves!
-   Without changing the API url, write a function to transform your 
-   data before it's displayed. The function should eliminate
-   everything but bugs and flowers. Use your function in the API call.  
+   Let's create an emoji slot machine! Replace the hardcoded 
+   data with random fruit emojis from an emojis API. 
    
-   Hint: Be sure to console the data to see what properties can help you do this!
+   - Request emoji food data from the API resource below. Log it and look at it!
+        - Write a function that takes in the data and returns a new array of only
+        fruit emoji objects
+        - Write a function to get 9 random fruits from your new array of fruit 
+        
+   - Load nine random fruits into the slot machine
 */
 
-const api = 'https://apis.scrimba.com/emojihub/api/all/category/animals-and-nature';
-const flowerBed = document.querySelector('.emoji-flower-bed');
+const slotMachine = document.querySelector('.emoji-slots-game');
+const food = 'https://apis.scrimba.com/emojihub/api/all/category/food-and-drink';
 
-// group: 'animal bug'
-// group: 'plant other'
-
-function clearTheGarden(arr) {
-  // filter by group property
-  // return only groups: 'animal bug' or 'plant flower
-  return arr.filter(({ group }) => group === 'animal bug' || group === 'plant flower')
+function makeFruitArray(arr) {
+  // filter supplied arr for only group: 'food fruit'
+  // - group property that only includes the word 'fruit'
+  // console.log(arr)
+  const fruitOnly = arr.filter(foodItem => foodItem.group === 'food fruit');
+  // console.log(fruitOnly)
+  getRandomFruits(fruitOnly)
+  // return fruitOnly;
 }
 
+// makeFruitArray(getData())
 
-fetch(api)
-  .then(response => response.json())
-  .then(result => clearTheGarden(response))
-  .then((data) => {
-    data.forEach(emoji => {
-      flowerBed.innerHTML += `<li>${emoji.htmlCode}</li>`;
-    });
-  })
-  .catch(err => console.log(err));
+function getRandomFruits(arr) {
+  // accept array of fruits 
+  // inititialize a new array to hold 9 random fruits
+  const randomFruits = [];
+  // loop 9 times
+  for (let i = 0; i < 9; i++) {
+    const randomIndex = [Math.floor(Math.random() * arr.length)];
+    randomFruits.push(arr[randomIndex])
+  }
+  // - generate random number each iteration
+  // - number as index of arr
+  // - push random fruit to new array
+  // Return new array
+  // console.log(randomFruits)
+  generateFruitHTML(randomFruits)
+}
+
+function generateFruitHTML(fruits) {
+  let html = '';
+  for (let fruit of fruits) {
+    // console.log(fruit)
+    html += `<li>${fruit.htmlCode[0]}</li>`
+  }
+  // console.log(html)
+  slotMachine.innerHTML = html
+}
+
+async function getData() {
+  const url = 'https://apis.scrimba.com/emojihub/api/all/category/food-and-drink';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`)
+    }
+    const data = await response.json();
+    // console.log(data)
+    makeFruitArray(data)
+  } catch (error) {
+    console.log(error.message)
+  }
+
+}
+
+getData()
