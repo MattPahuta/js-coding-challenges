@@ -1,27 +1,21 @@
 # JavaScript Coding Challenges
 
-This is a repo dedicated to tracking various JavaScript coding challenges I've completed, primarily sourced from [Scrimba](https://srimba.com). 
+This is a repo dedicated to tracking JavaScript coding challenges completed from the [Scrimba JavaScript Interview Challenges course](https://v2.scrimba.com/javascript-interview-challenges-c02c). 
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The challenges](#the-challenges)
 - [Author](#author)
 
 ## Overview
 
-### The challenge
+### The challenges
 
-Users should be able to:
-
-- Example: View the optimal layout for the interface depending on their device's screen size
-- Example: See hover and focus states for all interactive elements on the page
-
-
+Various JavaScript coding challenges 
 
 ## Author
 
 - Website - [Matt Pahuta](https://www.mattpahuta.com)
-- Frontend Mentor - [@mattpahuta](https://www.frontendmentor.io/profile/MattPahuta)
 - Twitter - [@mattpahuta](https://www.twitter.com/MattPahuta)
 - LinkedIn - [Matt Pahuta](www.linkedin.com/in/mattpahuta)
